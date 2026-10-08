@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>代发预充申请</title>
+  <style>
+    :root {
+      --bg: #f2f3f5;
+      --card: #ffffff;
+      --line: #eff0f1;
+      --section: #f5f6f7;
+      --text: #1f2329;
+      --placeholder: #8f959e;
+      --star: #f54a45;
+      --blue: #3370ff;
+      --muted: #646a73;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0 16px 64px;
+    }
+    .site-nav {
+      width: min(390px, 100%);
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      padding: 16px 0 20px;
+      font-size: 14px;
+    }
+    .site-nav a { color: var(--blue); text-decoration: none; }
+    .site-nav a:hover { text-decoration: underline; }
+    .sheet {
+      width: 390px;
+      background: var(--card);
+      border-radius: 16px;
+      box-shadow: 0 8px 28px rgba(31, 35, 41, 0.08);
+      overflow: hidden;
+    }
+    h1 {
+      margin: 0;
+      padding: 18px 16px 16px;
+      text-align: center;
+      font-size: 17px;
+      font-weight: 600;
+      letter-spacing: 0.2px;
+      border-bottom: 1px solid var(--line);
+    }
+    .section {
+      margin: 0;
+      padding: 10px 16px;
+      background: var(--section);
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 400;
+    }
+    .row {
+      min-height: 52px;
+      padding: 0 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      border-bottom: 1px solid var(--line);
+      background: var(--card);
+    }
+    .label {
+      flex: none;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 22px;
+    }
+    .star { color: var(--star); font-style: normal; font-weight: 600; margin-left: 1px; }
+    .placeholder {
+      min-width: 0;
+      color: var(--placeholder);
+      font-size: 16px;
+      font-weight: 400;
+      text-align: right;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .chev { margin-left: 2px; color: #bbbfc4; }
+    .group-add {
+      padding: 10px 16px 14px;
+      border-bottom: 1px solid var(--line);
+      background: var(--card);
+    }
+    .plus {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: 1.5px solid var(--blue);
+      background: transparent;
+      color: var(--blue);
+      display: grid;
+      place-items: center;
+      padding: 0;
+    }
+    .plus svg { display: block; }
+    .desc {
+      margin: 8px 0 0;
+      color: var(--placeholder);
+      font-size: 12px;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+  <nav class="site-nav" aria-label="原型导航">
+    <a href="../">目录</a>
+    <a href="../review/">转账审核原型</a>
+    <a href="https://bestfulfill.feishu.cn/wiki/RST4woQUsiJ3yFkPdu9czQxlntc" target="_blank" rel="noopener">飞书需求文档</a>
+  </nav>
+  <article class="sheet" aria-label="代发预充申请">
+    <h1>代发预充申请</h1>
+
+    <div class="row">
+      <span class="label">运营部业务组<i class="star">*</i></span>
+      <span class="placeholder">请勾选申请事项对应的业务组</span>
+    </div>
+    <div class="group-add">
+      <button type="button" class="plus" aria-label="添加运营部业务组">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <path d="M8 2.5v11M2.5 8h11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path>
+        </svg>
+      </button>
+      <p class="desc">业务组属于交付中心时，由交付中心负责人审批。</p>
+    </div>
+
+    <h2 class="section">商户与业务信息</h2>
+    <div class="row">
+      <span class="label">商户ID<i class="star">*</i></span>
+      <span class="placeholder">请输入</span>
+    </div>
+    <div class="row">
+      <span class="label">商户名称<i class="star">*</i></span>
+      <span class="placeholder">请输入</span>
+    </div>
+    <div class="row">
+      <span class="label">商户邮箱<i class="star">*</i></span>
+      <span class="placeholder">请输入</span>
+    </div>
+    <div class="row">
+      <span class="label">子业务<i class="star">*</i></span>
+      <span class="placeholder">请输入</span>
+    </div>
+
+    <h2 class="section">商户信用额度</h2>
+    <div class="row">
+      <span class="label">是否开通<i class="star">*</i></span>
+      <span class="placeholder">请选择<span class="chev">›</span></span>
+    </div>
+    <div class="row">
+      <span class="label">总额度<i class="star">*</i></span>
+      <span class="placeholder">请输入</span>
+    </div>
+    <div class="row">
+      <span class="label">已用额度<i class="star">*</i></span>
+      <span class="placeholder">请输入</span>
+    </div>
+    <div class="row">
+      <span class="label">剩余额度<i class="star">*</i></span>
+      <span class="placeholder">请输入</span>
+    </div>
+
+    <h2 class="section">转账与预充单据</h2>
+    <div class="row">
+      <span class="label">预充申请单号<i class="star">*</i></span>
+      <span class="placeholder">请输入</span>
+    </div>
+  </article>
+</body>
+</html>

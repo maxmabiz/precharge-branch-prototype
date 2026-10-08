@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fund · 转账审核</title>
+  <!--
+    按资金后台「转账审核」截图还原版式。
+    假设：右侧被挡住的列是转账金额；四项操作为预充、匹配、确认、退回并失效。
+    列表、商户和金额都是虚构演示数据，不使用截图里的记录。
+    打开时筛选已是「履约 / 待匹配」，与截图初始状态一致；点搜索后才按新条件过滤。
+  -->
+  <link rel="stylesheet" href="styles.css">
+  <script src="../vendor/react.development.js" crossorigin="anonymous"></script>
+  <script src="../vendor/react-dom.development.js" crossorigin="anonymous"></script>
+  <script src="../vendor/babel.min.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="text/babel" src="tweaks-panel.jsx"></script>
+  <script type="text/babel" src="icons.jsx"></script>
+  <script src="data.js"></script>
+  <script type="text/babel" src="app.jsx"></script>
+  <script type="text/babel">
+    const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+      "primary": "#1677ff",
+      "density": "默认",
+      "dark": false
+    }/*EDITMODE-END*/;
+
+    function Root() {
+      const [t, setTweak] = useTweaks(TWEAK_DEFAULTS);
+      return <TransferApp t={t} setTweak={setTweak} />;
+    }
+
+    const root = ReactDOM.createRoot(document.getElementById("root"));
+    root.render(<Root />);
+  </script>
+</body>
+</html>
